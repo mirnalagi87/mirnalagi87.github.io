@@ -128,13 +128,13 @@
   </style>
 </head>
 <body>
+
   <header class="hdr">
     <div class="wrap">
       <div class="hdr-row"></div>
     </div>
   </header>
-<script async="async" data-cfasync="false" src="https://commandsister.com/4ae3afb5944db27871dfab89559982f9/invoke.js"></script>
-<div id="container-4ae3afb5944db27871dfab89559982f9"></div>
+
   <main class="main">
     <div class="player">
       <video id="video" class="video" controls playsinline preload="metadata" controlslist="nodownload"></video>
@@ -142,7 +142,7 @@
 
     <div class="watch-meta-top">
       <div>
-        <p class="vmeta"><span id="viewCount"></span> · <span id="uploadedAt"></span></p>
+        <p class="vmeta">Video Player</p>
       </div>
     </div>
   </main>
@@ -155,8 +155,6 @@
 
   <script>
     (function () {
-      function $(id) { return document.getElementById(id); }
-
       var params = new URLSearchParams(location.search);
       var srcParam = params.get('src') || '';
       var vid = params.get('v') || params.get('id') || '';
@@ -164,19 +162,8 @@
       var CDN = 'https://cdn2.videy.co/';
       var videoUrl = isId ? CDN + vid + '.mp4' : '';
 
-      var video = $('video');
-
-      document.title = vid ? 'Watch On Slicevidey - ' + vid : 'Watch On Slicevidey';
-
-      var isAdmin = false;
-      try { 
-        isAdmin = !!sessionStorage.getItem('sd_admin_pw'); 
-      } catch (e) {}
-
-      if (isAdmin) {
-        document.body.classList.add('is-admin');
-      }
-
+      var video = document.getElementById('video');
+      
       if (/^https?:\/\//i.test(srcParam)) {
         video.src = srcParam;
         video.load();
@@ -185,6 +172,13 @@
         video.load();
       }
     })();
-  </script>
-</body>
+  </script><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCKPB0QL2P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TCKPB0QL2P');
+</script></body>
 </html>
